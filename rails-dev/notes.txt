@@ -1,0 +1,47 @@
+# list available ruby versions 
+```bash
+rvm list known
+```
+
+# list available ruby versions installed
+```bash
+rvm list
+```
+
+# install a ruby version
+```bash
+rvm install <ruby_version>
+```
+
+# use a ruby version
+```bash
+rvm use <ruby_version>
+```
+
+# install rails library
+```bash
+gem install rails
+```
+
+# create a rails app
+```bash
+rails new <app_name>
+```
+
+# install rails dependencies
+```bash
+bundle install
+```
+
+# generate a controller
+```bash
+rails generate controller <ControllerName> <action_name>
+```
+
+# start the server in production mode
+```bash
+RAILS_ENV=production rails assets:precompile
+rails s -e production
+```
+
+
