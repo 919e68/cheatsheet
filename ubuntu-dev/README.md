@@ -24,4 +24,12 @@ sudo mount -t hfsplus -o rw,remount -force <partition-name> /media/<folder-name>
 sudo umount <partition_name>
 ```
 
+#### show logs
+```
+PS4='+$BASH_SOURCE> ' BASH_XTRACEFD=7 bash -xl 7>&2
+```
 
+#### add to group
+```
+usermod -a -G <groupname> <username>
+```

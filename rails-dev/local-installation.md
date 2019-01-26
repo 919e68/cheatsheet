@@ -37,3 +37,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 sudo rm -rf ~/.rvm
 ```
+
+
+source /etc/profile.d/rvm.sh
