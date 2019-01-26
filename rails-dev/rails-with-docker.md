@@ -44,8 +44,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ABC12abc
-      MYSQL_DATABASE: grist_db
-      MYSQL_USER: grist_db_user
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_db_user
       MYSQL_PASSWORD: ABC12abc
     ports:
       - '3307:3306'
@@ -61,7 +61,7 @@ services:
     links:
       - db
     environment:
-      DB_NAME: grist_db
+      DB_NAME: test_db
       DB_USER: root
       DB_PASS: ABC12abc
       DB_HOST: db
@@ -70,7 +70,7 @@ services:
 
 - setup the containers and create rails app
 ```
-docker-compose run app rails new . --force --database=mysql --skip-bundle
+docker-compose run app rails new . --force --webpack --database=mysql --skip-bundle
 ```
 
 - update *database.yml*
