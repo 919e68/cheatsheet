@@ -18,10 +18,15 @@ rvm list
 
 #### install ruby version
 ```
-rvm install <ruby_version>
+rvm install <ruby-version>
 ```
 
-### remove rvm
+#### use ruby version
+```
+rvm use <ruby-version>
+```
+
+#### remove rvm
 ```
 sudo nano ~/.bashrc
 
