@@ -1,3 +1,6 @@
+#### local installation
+
+
 # How to create a rails app inside docker
 - create the app folder
 

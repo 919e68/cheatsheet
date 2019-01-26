@@ -9,8 +9,19 @@ sudo apt-get install libcanberra-gtk-module
 sudo chmod +x <filename.sh>
 ```
 
-### list available drives
+### list partitions
 ```bash
 df
 ```
+
+### mount a partition
+```bash
+sudo mount -t hfsplus -o rw,remount -force <partition-name> /media/<folder-name>
+```
+
+### unmount a partition
+```bash
+sudo umount <partition_name>
+```
+
 
