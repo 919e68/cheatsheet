@@ -33,3 +33,13 @@ PS4='+$BASH_SOURCE> ' BASH_XTRACEFD=7 bash -xl 7>&2
 ```
 usermod -a -G <groupname> <username>
 ```
+
+#### list process with search
+```
+ps -e|grep node
+```
+
+#### kill process using port
+```
+kill -9 <port>
+```
