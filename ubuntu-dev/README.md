@@ -1,25 +1,25 @@
-### install dependencies for generating cursor pack
+#### install dependencies for generating cursor pack
 ```
 sudo apt-get install libcanberra-gtk-module
 ```
 
-### make a file executable
+#### make a file executable
 - add ```#!/bin/bash -e``` this to the top
 ```bash
 sudo chmod +x <filename.sh>
 ```
 
-### list partitions
+#### list partitions
 ```bash
 df
 ```
 
-### mount a partition
+#### mount a partition
 ```bash
 sudo mount -t hfsplus -o rw,remount -force <partition-name> /media/<folder-name>
 ```
 
-### unmount a partition
+#### unmount a partition
 ```bash
 sudo umount <partition_name>
 ```
@@ -36,10 +36,12 @@ usermod -a -G <groupname> <username>
 
 #### list process with search
 ```
-ps -e|grep node
+ps -e|grep <appname>
 ```
 
 #### kill process using port
 ```
 kill -9 <port>
 ```
+#### check apps that listen on a port
+sudo netstat -tulpn | grep 443
