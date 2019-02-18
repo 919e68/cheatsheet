@@ -44,4 +44,6 @@ ps -e|grep <appname>
 kill -9 <port>
 ```
 #### check apps that listen on a port
+```
 sudo netstat -tulpn | grep 443
+```
