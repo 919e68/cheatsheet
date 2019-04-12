@@ -47,3 +47,11 @@ kill -9 <port>
 ```
 sudo netstat -tulpn | grep 443
 ```
+
+### clean system
+```
+sudo apt-get clean
+sudo apt-get autoremove --purge
+sudo apt-get remove <package-name> <package-name>
+sudo apt-get autoremove
+```
