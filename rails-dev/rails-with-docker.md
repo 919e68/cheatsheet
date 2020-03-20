@@ -21,18 +21,16 @@ gem 'rails', '~> 5.2.2'
 
 - create *Dockerfile* file
 ```
-FROM ruby:2.4.5
+FROM ruby:2.6.0
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN apt-get update && apt-get install -y build-essential
+RUN apt-get install default-libmysqlclient-dev libpq-dev
 
-WORKDIR /usr/src/app
+ENV APP_HOME /app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
-ADD Gemfile ./Gemfile
-ADD Gemfile.lock ./Gemfile.lock
-
-RUN bundle install
-
-ADD . .
+ADD . $app
 ```
 
 - create *docker-compose.yml* file

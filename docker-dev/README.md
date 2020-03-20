@@ -8,6 +8,11 @@ docker images
 docker pull <image_name>
 ```
 
+#### remove image
+```
+docker image rm <id>
+```
+
 #### run from image (will create a new container)
 ```bash
 docker run <image:tag>
