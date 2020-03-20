@@ -48,7 +48,7 @@ docker run --name <container_name> -p <localport>:<dockerport> <image_name>
 docker run -v <localpath>:<dockerpath>
 ```
 
-#### remove all containers
+#### remove no running containers
 ```bash
 docker rm $(docker ps -aq)
 ```
