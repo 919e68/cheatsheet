@@ -40,34 +40,50 @@ services:
   db:
     image: mysql:5.7
     restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql:rw
     environment:
-      MYSQL_ROOT_PASSWORD: ABC12abc
-      MYSQL_DATABASE: test_db
-      MYSQL_USER: test_db_user
-      MYSQL_PASSWORD: ABC12abc
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: secret
     ports:
-      - '3307:3306'
+      - '3308:3306'
+
   app:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - '.:/usr/src/app'
+      - .:/app
+      - bundle-path:/bundle
     ports:
-      - '3001:3000'
+      - '3000:3000'
     depends_on:
       - db
-    links:
-      - db
     environment:
-      DB_NAME: test_db
+      BUNDLE_PATH: /bundle/vendor
+      DB_NAME: app_db
       DB_USER: root
-      DB_PASS: ABC12abc
+      DB_PASS: secret
       DB_HOST: db
+    networks:
+      default:
+        ipv4_address: 10.10.10.22
+
+volumes:
+  mysql-data:
+  bundle-path:
+
+networks:
+  default:
+    external:
+      name: red-network
 
 ```
 
 - setup the containers and create rails app
 ```
+docker-compose run app bundle install
 docker-compose run app rails new . --force --webpack --database=mysql --skip-bundle
 ```
 
