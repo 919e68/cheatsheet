@@ -1,3 +1,5 @@
+## Images
+
 #### list images
 ```bash
 docker images
@@ -12,6 +14,8 @@ docker pull <image_name>
 ```
 docker image rm <id>
 ```
+
+# Containers
 
 #### run from image (will create a new container)
 ```bash
