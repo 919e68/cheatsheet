@@ -48,7 +48,7 @@ services:
       MYSQL_USER: app_user
       MYSQL_PASSWORD: secret
     ports:
-      - '3308:3306'
+      - '3306:3306'
 
   app:
     build: .
@@ -68,7 +68,7 @@ services:
       DB_HOST: db
     networks:
       default:
-        ipv4_address: 10.10.10.22
+        ipv4_address: 10.10.10.10
 
 volumes:
   mysql-data:
