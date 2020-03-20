@@ -84,7 +84,7 @@ networks:
 - setup the containers and create rails app
 ```
 docker-compose run app bundle install
-docker-compose run app rails new . --force --webpack --database=mysql --skip-bundle
+docker-compose run app bundle exec rails new . --force --webpack --database=mysql --skip-bundle
 ```
 
 - update *database.yml*
