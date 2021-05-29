@@ -1,14 +1,14 @@
-##### list
+#### list
 ```
 tmux ls
 ```
 
-##### start
+#### start
 ```
 tmux new -s <session-name>
 ```
 
-##### attach
+#### attach
 ```
 tmux a -t <session-name>
 ```
