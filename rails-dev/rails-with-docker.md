@@ -21,7 +21,7 @@ gem 'rails', '~> 6.1', '>= 6.1.3.2'
 
 - create *Dockerfile* file
 ```
-FROM ruby:2.6.0
+FROM ruby:2.7.0
 
 RUN apt-get update && apt-get install -y build-essential
 RUN apt-get install default-libmysqlclient-dev libpq-dev
