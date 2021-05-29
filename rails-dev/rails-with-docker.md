@@ -14,7 +14,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 - add rails gem
 ```
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.1', '>= 6.1.3.2'
 ```
 
 - create *Gemfile.lock* file
