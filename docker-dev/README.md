@@ -17,6 +17,10 @@ docker image rm <id>
 
 # Containers
 
+#### build
+```
+docker build -t <name> .
+```
 #### run from image (will create a new container)
 ```bash
 docker run <image:tag>
