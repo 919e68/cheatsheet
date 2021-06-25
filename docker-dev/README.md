@@ -10,6 +10,10 @@ docker images
 docker pull <image_name>
 ```
 
+#### build a image
+```
+docker build -t <name> .
+```
 #### remove image
 ```
 docker image rm <id>
@@ -17,13 +21,10 @@ docker image rm <id>
 
 # Containers
 
-#### build
-```
-docker build -t <name> .
-```
 #### run from image (will create a new container)
 ```bash
 docker run <image:tag>
+docker run -name <name> <image:tag>
 ```
 
 #### run a cli in container
