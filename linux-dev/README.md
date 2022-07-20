@@ -89,4 +89,6 @@ apt list | grep nginx
 
 ```bash
 curl -s -L <url> | bash
+curl <url> | bash -s arg1 arg2
+wget -O - <url>  | bash
 ```
