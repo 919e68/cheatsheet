@@ -1,8 +1,10 @@
 #!/bin/bash
 
-fdisk -l
+echo 'install arch'
 
-fdisk /dev/sda
+# fdisk -l
+
+# fdisk /dev/sda
 
 # create DOS partition table
 # echo "o\n"
