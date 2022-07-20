@@ -5,10 +5,11 @@ fdisk -l
 fdisk /dev/sda
 
 # create DOS partition table
-echo "o\n"
+# echo "o\n"
 
 # create partition table
-echo "n\n"
+# echo "n\n"
+
 # echo "\n" # partition type   - select default
 # echo "\n" # partition number - select default
 # echo "\n" # first sector     - select default
