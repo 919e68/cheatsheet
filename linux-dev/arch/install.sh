@@ -1,5 +1,7 @@
 #!/bin/bash
 
+fdisk -l
+
 fdisk /dev/sda
 
 # create DOS partition table
