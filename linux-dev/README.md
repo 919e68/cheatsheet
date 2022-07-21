@@ -92,3 +92,25 @@ curl -s -L <url> | bash
 curl <url> | bash -s arg1 arg2
 wget -O - <url>  | bash
 ```
+
+#### replace a line
+
+```bash
+sed -i '/TEXT_TO_BE_REPLACED/c\This line is removed by the admin.' /tmp/foo
+```
+
+#### replace subtext
+
+```bash
+sed -e '/^HOOKS=(/ s/three five/three four five/;'
+```
+
+#### comment uncomment
+
+```bash
+# comment
+sed -i '/<pattern>/s/^/#/g' file
+
+# uncomment
+sed -i '/<pattern>/s/^#//g' file
+```
