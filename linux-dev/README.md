@@ -1,7 +1,30 @@
-#### install dependencies for generating cursor pack
+# Linux Commands
+
+## Users
+
+### create user
 
 ```bash
-sudo apt-get install libcanberra-gtk-module
+useradd -m <user>
+```
+
+### add user to a group
+
+```bash
+usermod -a -G <group> <user>
+```
+
+### check groups
+
+```bash
+groups
+cat /etc/group
+```
+
+### create group
+
+```bash
+groupadd <group>
 ```
 
 #### make a file executable
@@ -45,12 +68,12 @@ usermod -a -G <groupname> <username>
 #### list process with search
 
 ```bash
-ps -e|grep <appname>
+ps -e | grep <appname>
 ```
 
 #### kill process using port
 
-```bah
+```bash
 kill -9 <port>
 ```
 
