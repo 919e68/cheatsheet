@@ -27,6 +27,20 @@ cat /etc/group
 groupadd <group>
 ```
 
+## Files
+
+### own a file
+
+```bash
+chown $USER <filename>
+```
+
+### own a folder
+
+```bash
+chown -R $USER <folder>
+```
+
 #### make a file executable
 
 - add `#!/bin/bash -e` this to the top
