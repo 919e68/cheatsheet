@@ -1,27 +1,28 @@
-#### local installation
+# Rails Docker Setup
 
+## How to create a rails app inside docker
 
-# How to create a rails app inside docker
 - create the app folder
-
 - create *Gemfile* file
-
 - add to top line
-```
+
+```code
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ```
 
 - add rails gem
-```
-gem 'rails', '~> 6.1', '>= 6.1.3.2'
+
+```code
+gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 ```
 
 - create *Gemfile.lock* file
 
 - create *Dockerfile* file
-```
-FROM ruby:2.7.0
+
+```code
+FROM ruby:3.2.0
 
 RUN apt-get update && apt-get install -y build-essential
 RUN apt-get install default-libmysqlclient-dev libpq-dev
@@ -34,12 +35,13 @@ ADD . $app
 ```
 
 - create *docker-compose.yml* file
-```
+
+```code
 version: '3'
 services:
   db:
-    image: mysql:5.7
-    restart: always
+    image: mysql:8.0
+    # restart: always
     volumes:
       - mysql-data:/var/lib/mysql:rw
     environment:
@@ -48,7 +50,7 @@ services:
       MYSQL_USER: app_user
       MYSQL_PASSWORD: secret
     ports:
-      - '3306:3306'
+      - 3306:3306
 
   app:
     build: .
@@ -57,7 +59,7 @@ services:
       - .:/app
       - bundle-path:/bundle
     ports:
-      - '3000:3000'
+      - 3000:3000
     depends_on:
       - db
     environment:
@@ -66,29 +68,23 @@ services:
       DB_USER: root
       DB_PASS: secret
       DB_HOST: db
-    networks:
-      default:
-        ipv4_address: 10.10.10.10
 
 volumes:
   mysql-data:
   bundle-path:
 
-networks:
-  default:
-    external:
-      name: red-network
-
 ```
 
 - setup the containers and create rails app
-```
+
+```code
 docker-compose run app bundle install
 docker-compose run app bundle exec rails new . --force --webpack --database=mysql --skip-bundle
 ```
 
 - update *database.yml*
-```
+
+```code
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -111,16 +107,14 @@ production:
 - update *docker-compose.yml* setup environment variables for database name,user,pass,host
 
 - build the image
-```
+
+```code
 docker-compose build
 ```
 
 - run the app
-```
+
+```code
+docker-compose run app bundle install
 docker-compose up
 ```
-
-
-
-
-
